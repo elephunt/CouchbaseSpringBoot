@@ -18,7 +18,7 @@ public class Controller {
     @Autowired
     private PlayerManager manager;
 
-    @RequestMapping(value = "", method = RequestMethod.GET)
+    @RequestMapping(value = "get", method = RequestMethod.GET)
     public String getAllPlayers() {
         return "{\n" +
                 "  \"name\":\"Roman\",\n" +

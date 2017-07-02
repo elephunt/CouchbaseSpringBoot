@@ -28,7 +28,9 @@ public class CouchbaseMainApplication {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("rm.controller"))
-                .paths(PathSelectors.ant("/players/*"))
+                .paths(PathSelectors.any())
                 .build();
     }
+
+
 }
