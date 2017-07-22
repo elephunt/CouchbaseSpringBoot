@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 import rm.documents.Player;
 import rm.manager.PlayerManager;
 
+import java.util.List;
+import java.util.Random;
+
 /**
  * Created by roman on 25/06/17.
  */
@@ -18,12 +21,9 @@ public class Controller {
     @Autowired
     private PlayerManager manager;
 
-    @RequestMapping(value = "get", method = RequestMethod.GET)
-    public String getAllPlayers() {
-        return "{\n" +
-                "  \"name\":\"Roman\",\n" +
-                "  \"lastname\":\"Margolin\"\n" +
-                "}";
+    @RequestMapping(value = "all", method = RequestMethod.GET)
+    public List<Player> getAllPlayers() {
+        return manager.getAllPlayers();
     }
 
     @RequestMapping(value = "insert", method = RequestMethod.POST, consumes = "application/json")
@@ -31,5 +31,15 @@ public class Controller {
         return this.manager.insertPlayer(player).toString();
     }
 
+
+    @RequestMapping(value = "mock" , method = RequestMethod.GET)
+    public void insertPlayer(){
+        Random random = new Random();
+        Player player = new Player();
+        player.setId(random.nextLong());
+        player.setName("Roman");
+        player.setLastName("Margolin");
+        manager.insertPlayer(player);
+    }
 
 }

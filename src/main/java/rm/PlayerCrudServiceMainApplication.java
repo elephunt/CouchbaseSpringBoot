@@ -16,10 +16,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableSwagger2
-public class CouchbaseMainApplication {
+public class PlayerCrudServiceMainApplication {
 
     public static void main(String args[]) {
-        SpringApplication.run(CouchbaseMainApplication.class, args);
+        SpringApplication.run(PlayerCrudServiceMainApplication.class, args);
     }
 
 
