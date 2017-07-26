@@ -15,6 +15,7 @@ public class RedisConfiguration
     @Bean
     public  JedisConnectionFactory jedisConnectionFactory(){
         JedisConnectionFactory jedisConnectionFactory = new JedisConnectionFactory();
+        jedisConnectionFactory.setHostName("redis");
         return jedisConnectionFactory;
     }
 
